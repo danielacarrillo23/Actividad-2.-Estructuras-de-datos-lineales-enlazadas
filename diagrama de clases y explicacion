@@ -1,0 +1,69 @@
+Explicación Personal del Diagrama
+He diseñado el diagrama de clases para representar claramente cómo se estructura y se relacionan las distintas partes del proyecto. La clase Paciente es fundamental ya que representa la información básica de cada paciente. La clase Nodo permite crear una lista enlazada donde cada nodo apunta al siguiente. La clase ListaPacientes administra la lista de nodos y proporciona métodos para manipular la lista. Finalmente, la clase Main es el punto de entrada donde se pone en práctica toda la funcionalidad del sistema.
+
+Este diagrama de clases me ayuda a visualizar la arquitectura del proyecto y a asegurarme de que todas las partes del sistema estén bien integradas y funcionen correctamente.
+
+
+
+
+  +-----------------+
+|     Paciente    |
++-----------------+
+| -nombre: String |
+| -clinica: String|
+| -edad: int      |
++-----------------+
+| +Paciente(nombre: String, clinica: String, edad: int) |
+| +getNombre(): String                                |
+| +setNombre(nombre: String): void                    |
+| +getClinica(): String                               |
+| +setClinica(clinica: String): void                  |
+| +getEdad(): int                                    |
+| +setEdad(edad: int): void                          |
+| +toString(): String                                |
++-----------------+
+
+          |
+          |
+          |
+          v
+
++-----------------+
+|      Nodo       |
++-----------------+
+| -paciente: Paciente |
+| -siguiente: Nodo    |
++-----------------+
+| +Nodo(paciente: Paciente) |
+| +getPaciente(): Paciente |
+| +setPaciente(paciente: Paciente): void |
+| +getSiguiente(): Nodo |
+| +setSiguiente(siguiente: Nodo): void |
++-----------------+
+
+          |
+          |
+          |
+          v
+
++-----------------+
+|  ListaPacientes |
++-----------------+
+| -cabeza: Nodo   |
++-----------------+
+| +ListaPacientes() |
+| +agregarPaciente(paciente: Paciente): void |
+| +mostrarPacientes(): void |
+| +eliminarPaciente(nombre: String): boolean |
++-----------------+
+
+          |
+          |
+          |
+          v
+
++-----------------+
+|      Main       |
++-----------------+
+| +main(args: String[]): void |
++-----------------+
